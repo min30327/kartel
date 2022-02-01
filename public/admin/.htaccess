@@ -1,0 +1,21 @@
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /admin/
+
+    RewriteCond %{REQUEST_URI} !\.(css|jpe?g|png|js|gif|pdf|mp4|mov|swf|svg|ico|ttf|oft|eot|woff|woff2|json|xml|xsl)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /admin/index.html [L]
+
+    RewriteCond %{REQUEST_URI} !(^/api)
+    RewriteCond %{REQUEST_URI} !\.(xml|xsl)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) /admin/$1 [L]
+
+    RewriteRule ^/admin/$ /adimn/index.html [L]
+
+
+</IfModule>

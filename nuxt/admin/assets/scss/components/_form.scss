@@ -1,0 +1,82 @@
+.c-form__row{
+    margin-bottom: 16px;
+    position: relative;
+    
+}
+.c-form__label{
+    color: $gray;
+    font-size: 0.8rem;
+}
+.c-form__control{
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    line-height: 140%;
+    color: $base-color;
+    background-color: #3E4550;
+    background-clip: padding-box;
+    border: 1px solid  #3E4550;
+    border-radius: $border-radius;
+    @include easeOutExpo(300ms);
+    transition-property: border-color,box-shadow;
+
+    &:focus{
+        color: $base-color;
+        background-color: #3E4550;
+        border-color: transparent;
+        outline: 0;
+        box-shadow: 0 0 0 2px rgba($primary,.6%);
+       
+    }
+    &::placeholder {
+        color: lighten($gray,10%);
+    }
+    &.is-invalid{
+        &+.invalid-feedback{
+            color: $danger;
+            font-size: 12px;
+        }
+    }
+}
+
+.c-form-check{
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: .125rem;
+    margin-top: 8px;
+    color: $gray;
+    font-size: 14px;
+    line-height: 140%;
+    .c-form-check__input{
+        border-radius: .25em;
+        margin-left: -1.5em;
+        margin-right: 8px;
+        width:  16px;
+        height:  16px;
+        margin-top: 7px;
+        vertical-align: top;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: 1px solid rgba(0,0,0,.1);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    .c-form-check__input:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+    .c-form-check__input:checked[type=checkbox] {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    }
+    span{
+        padding-top: 6px;
+        display: inline-block;
+    }
+}

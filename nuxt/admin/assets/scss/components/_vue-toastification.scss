@@ -1,0 +1,80 @@
+$vt-color-success: rgb(8, 203, 158);
+$vt-color-error: rgb(244, 53, 88);
+
+
+// Import the regular Vue Toastification stylesheets (or create your own)
+@import "vue-toastification/src/scss/_variables";
+@import "vue-toastification/src/scss/_toastContainer";
+@import "vue-toastification/src/scss/_toast";
+@import "vue-toastification/src/scss/_closeButton";
+@import "vue-toastification/src/scss/_progressBar";
+@import "vue-toastification/src/scss/_icon";
+@import "vue-toastification/src/scss/animations/_bounce";
+
+.not4h-toastification{
+    z-index: 10010;
+    @media (max-width:600px) {
+        top: auto !important;
+        bottom: -.5rem !important;
+        flex-direction: column-reverse!important;
+    }
+    .Vue-Toastification__toast{
+        min-height: 40px;
+        padding: 15px 20px;
+    }
+}
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+@keyframes toastInSm {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes toastOutSm {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.toast-enter-active {
+    animation-name: toastIn;
+    @media (max-width:600px) {
+        animation-name: toastInSm;
+    }
+}
+.toast-leave-active {
+    animation-name: toastOut;
+    @media (max-width:600px) {
+        animation-name: toastOutSm;
+    }
+}
+.toast-move {
+    @include easeInOutExpo(300ms);
+}

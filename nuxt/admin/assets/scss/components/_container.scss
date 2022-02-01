@@ -1,0 +1,11 @@
+.c-page__container{
+    width: 90%;
+    max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width:1199px) {
+        width: 100%;
+    }
+}

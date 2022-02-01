@@ -1,0 +1,31 @@
+.c-card{
+    position: relative;
+    z-index: 2;
+    background-color: #1F252E;
+    border-radius: $border-radius * 1.8;
+    .c-card__body{
+        overflow: hidden;
+        padding: 60px 50px;
+        @media (max-width:991px) {
+            padding: 50px 50px;
+        }
+        @media (max-width:767px) {
+            padding: 35px 30px;
+        }
+    }
+}
+.c-card__shadow{
+    position: relative;
+    &::before{
+        content:"";
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        width: 90%;
+        height: 90%;
+        background: $primary;
+        border-radius: $border-radius * 1.8;
+        opacity: .05;
+        filter: blur(10px);
+    }
+}

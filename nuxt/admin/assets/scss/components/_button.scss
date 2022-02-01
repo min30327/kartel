@@ -1,0 +1,133 @@
+.c-button__reset{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    text-decoration: none;
+    font-family:$font-family;
+}
+.c-button__primary{
+    padding: 13px 15px;
+    border-radius: $border-radius;
+    background-color: $primary;
+    color: #fff;
+    border-color: $primary;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+    &:disabled{
+        cursor:default;
+        background-color:lighten($primary,15%);
+        border-color: lighten($primary,15%);
+
+        &:hover,&:focus,&:active{
+            color: #fff;
+            background-color:lighten($primary,15%);
+            border-color: lighten($primary,15%);
+        }
+    }
+    &:hover,&:focus,&:active{
+        color: #fff;
+        background-color:lighten($primary,10%);
+        border-color: lighten($primary,10%);
+    }
+}
+.c-button__secondary{
+    padding: 12px 15px;
+    border-radius: $border-radius;
+    background-color: #424B5D;
+    color: #fff;
+    border-color: #424B5D;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    cursor: pointer;
+    &:disabled{
+        cursor: default;
+        background-color:lighten(#424B5D,20%);
+        border-color: lighten(#424B5D,20%);
+        &:hover,&:focus,&:active{
+
+            background-color:lighten(#424B5D,20%);
+            border-color: lighten(#424B5D,20%);
+        }
+    }
+    &:hover,&:focus,&:active{
+        color: #fff;
+        background-color:lighten(#424B5D,10%);
+        border-color: lighten(#424B5D,10%);
+    }
+}
+.c-button__block{
+    padding: 13px 15px;
+    display: block;
+    width: 100%;
+}
+.c-button__width-180{
+    min-width: 180px;
+}
+
+.c-button__submit{
+    padding: 13px 15px;
+    border-radius: $border-radius;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    &::before{
+        content:"";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0;
+        background-color: lighten($primary,10%);
+        border-radius: $border-radius;
+        z-index: 1;
+        @include easeOutExpo(400ms);
+    }
+    >span{
+        position: relative;
+        z-index: 2;
+    }
+    &:disabled{
+        cursor:default;
+        background-color: lighten($primary,10%);
+        &::before{
+            content: none;
+        }
+    }
+    &:hover,&:focus,&:active{
+        &::before{
+            opacity: 1;
+            top: auto;
+            bottom: 0;
+            height: 100%;
+        }
+    }
+}
+
+.c-button__outline{
+    border: 1px solid $gray;
+    color: $gray;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    background:transparent;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    &:hover,&:focus,&:active{
+        border-color: $primary;
+        color: $primary;
+    }
+}
+.c-button__small{
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.3;
+}

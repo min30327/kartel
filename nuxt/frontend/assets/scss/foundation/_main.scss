@@ -1,0 +1,107 @@
+
+html {
+    visibility: hidden;
+}
+html.wf-active {
+    visibility: visible;
+}
+body{
+    word-wrap:break-word;
+	font-synthesis: none;
+    -moz-font-feature-settings: 'kern';
+    -moz-osx-font-smoothing: grayscale;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+    direction: ltr;
+    font-family:$font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 175%;
+    color: $base-color;
+    background-color: $bg-color;
+    overflow-x: hidden;
+}
+
+#page{
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    // padding-left: $sidebar-width;
+    // @media (max-width:991px) {
+    //     padding-left: 0;
+    // }
+}
+img {
+	height: auto ;
+	max-width: 100%; 
+}
+img[src$=".svg"] {
+    width: 100%;
+}
+
+.sr-only{
+    clip: rect(0,0,0,0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+.sr-only-focusable:focus,.sr-only-focusable:active{
+    clip: auto;
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (min-width:991px) {   
+        max-width: 900px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (min-width:1199px) {   
+        max-width: 1140px;
+    }
+}
+a{
+    color: $primary;
+    &:hover,&:focus,&:active{
+        color: #d63e4a;
+    }
+}
+
+
+.c-container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (min-width:991px) {   
+        max-width: 900px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (min-width:1199px) {   
+        max-width: 1140px;
+    }
+}
+[data-button-animation]{
+    
+    [data-str-animation]{
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .js-str__animation{
+        min-width:.3rem;
+    }
+}
+
